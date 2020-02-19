@@ -1,0 +1,394 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2018-05-01/subscriptionDeploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "certificates_BackendAPICert_data": {
+      "type": "securestring",
+      "defaultValue": "MIIKmQIBAzCCClUGCSqGSIb3DQEHAaCCCkYEggpCMIIKPjCCBg8GCSqGSIb3DQEHAaCCBgAEggX8MIIF+DCCBfQGCyqGSIb3DQEMCgECoIIE/jCCBPowHAYKKoZIhvcNAQwBAzAOBAhA0S+ik96D8QICB9AEggTYopLaUJVNFf3arTXeFQy6W4QLh6j5HrVD5aMrG6/ZUDQmsXxM2nzzDf1T0xi+448L4B1525wvim6wpg9K6HjGIrVE1dCQglzTJt/KjyErn86Hs2U6aiezuq4YWxfHXoIUSgX2hHr6u/EEtLgpPFGtOPrg4hU7MnnurgB9CMGQX3656yWgOmh7DzO+6MXyrGsRVVwzyb06DoL+N2pc3WtuNEiqBkuOHvPLwTUlc8IEssuLYZ5FN4sLWThpOG09O7iLawhWWEep7Fd5N5VngQTYO3ck1+nabrRhVPNrVp0lF04O+QAJpTKLF05W0h9okxK/OoM8bi/+kiAAPLLurXyWGNEwoANczoegvsclt3SKsftpQTdK+T2muvgcBltlDXBPtWmxp2r17IukfgVwk/bSl2+lqam+RjzFZt+L67rFVI+7Ij4VCrF/+5GjbNQQ/3u1UDmm1YH9CQsk10aECOIkc+Py9xNm1bcU38Ys6MCsUBGcUl7rO1pHt/rGiLNpISNUswlFhfK2qep7dHZ8E5xly6HYLdNrvdnlyvI2nvEB0q/HlgtQCdtixTOexchaFIWe7Q4IVt36rZLI8QyDENtmrFy7zqUVWW8YnPAP8cyCkPlSLp05e2jHxKBCEeLRWXD8ie4O7vEYCxjyb31mycNPXmEfkURCW0I9KOPqmP9IVo91jm02ZLRf5Wr+SCsrY7iEHbeNZxDJs/pybdcHlUhL2/SB9Bi8UFakG44NYSjp/TA14LmsLqvdb00mJActq6ZijyE0ECFj6WLZ63YpkMQVIho/uhB8/WsIZChTTnx2a5ykDHwkE/1qN8KzsZO6czHtQR7/VDKb+o764LiTBxo1zhNLwhogKkDE2B/NPVErKjVxsBV4i5GWhmEjsFP7CHZWnKMWGQxOP+mFGNqN3EjORZAqSJMvhOZ71aS7tIL3Stw9/GktKq2DlUp7OWqQ3ePG3pseAh5AXUqPD+qJBVFLAEpYn/oK1MsxKvOuvz9zAC2Uzy/+sBezdNwJjMIDAJtK9X4VOqR9oKOoeGj615jIK+B4Uf1p9o/pMG/f4P2JUg7HceOxPQDVwqaqNeKefD4o+8OjuBJtX7kfGX1nFhcg5oUHs3bnX0PHbn4cbxBBOMvNbZEZeJx7h9kuBJ31jzQ66fttIH5EHm2SOd5hAuF63lp2bqC3lwBtQUHU+bK7Bv1+n1HOjCNJC6an5IND1KOW2HeDRqjvTgIplzLEFqPIIHJzYJgVp18eSgVIazc4J1D0+IMrBJEM5cOPFgxZw4LGxJKjX6mCS2+r6Z61yV/6gNCEIxq76AG7f+YT5PvpEqP7lX8CYM8/vo+FKTKWRYO/jLBINsLW+5khJw7Vu2r/WYUJRFV5cpaiDU6hMOz4u+x19lzEOscuzhy8PrtWmOhj/Iqg05Q6nUauo9StROP+lEyO5+05ldCami6WYVctYGThKfA6W56xvpOp46CvPwQoTkt6fm2lh55dPTFMdwIGLGFPKqUNRNDg0+GUnmxii2MWYFUVF4eSlT7qCNTR/l+xID58zKxRM3FPrsxLjq8z5a7/rG/KnUTyjbNGEVbORUq+DWTKRE/bgJevwKSraJY0fKKPbmlorv4O4KRNbS8dDCSVs7uKcjWQHVUyabBSP5XSbm8cetaWFjGB4jANBgkrBgEEAYI3EQIxADATBgkqhkiG9w0BCRUxBgQEAQAAADBdBgkqhkiG9w0BCRQxUB5OAHQAZQAtADkAMAAyADEAMAA5ADIANwAtADIAZAAzADUALQA0ADEAYgBiAC0AOQAwAGYAMQAtADcAZgAzADQAMAAwAGQAYQA2ADQAZQA4MF0GCSsGAQQBgjcRATFQHk4ATQBpAGMAcgBvAHMAbwBmAHQAIABTAG8AZgB0AHcAYQByAGUAIABLAGUAeQAgAFMAdABvAHIAYQBnAGUAIABQAHIAbwB2AGkAZABlAHIwggQnBgkqhkiG9w0BBwagggQYMIIEFAIBADCCBA0GCSqGSIb3DQEHATAcBgoqhkiG9w0BDAEDMA4ECHCm1dIg7fAlAgIH0ICCA+Bmk5g30sVu55yXJr1fP6SNtbRPYF1xwIylEKEfIvVX9zCIIGRIZG3GY3m8/N1NkRuF5GxuUmqKxj0EKJHljuOx6Ti070czBK2I066VqPMrPK8YoA1DnDjmjJKhhYOWUFzNsxRn0l7Nil8izPjlaN0CVYicxLLrwC3SVXwDNEN6h+ZGCxumob2zfGIM+MaCp/pR7sIo4V50d1OZnpxaHw2vcGZ+fYZtz41zsj9NWID/RjWF+uBRYGp/kyCMyW8gQsx0PlrmEZQPb9MnWwtCqlpDiSglNI3kMWZgcqGIQC17E4Pt7VymgpV/lweTLI8JJIYRnMFgiX7mPXNjE037/elxl0606yZ3Kch8bvcAutogEeZHFwQbm2bQgfhKq0NnRL8TxH8w1pvN0I9ELOWxnDo6dTp+Ub+JB6a2Y8GrvWGhELDdywZYIzzw0DzqJrgAIACSQNYntl4s1KUmxSsCwOHfPUqqKJk9VsCIYudBvu7bVwpsxQBWnhTSTsFqwXnnjfEff+/fXGUvRgl6nq75DuSj7Bo0snoGZE2KgSc8cJZiDPYwd0pbZvlgVN5obrN3Z5R5EZGd6B3itjfHlfw1mzRI5HePjTkFEGdEImqh0gv8zdempRKzfSrfdBlYC5mVv0u27Nq6vNMctI4EUN5ixbGKUTYTaJ4+tZt6Pm3NuSUMnkD/W9nKUPx56i60oF6RslUCjZRxCRsku8gd3bASjrb84yTPrAgo6Qjb5mmO6jz3phhsKI7F9v4KIYf6F2LQScQJ8dDbkj6Mel+FM919uUftzllE3BngO1XnukThqxitDlKRn82qVNBT8i57hUx7FOYrkBQ/efDSjsvwLl5F3doozDxh3wjOfbhMKxU6thxR+GblB4aOAuIu6AhKSSYMMzJrqS8YDkf1qIv2XI9KDsOI3ElLv1COtPHBfjCLzAzeNwBROfjYw+tvLL6RHRU32FMzP17qyiXE3BdJUQa8072DratfyNF37aGozbVzuZ3g7rHU/W+c93dmNFa4ls8e6uOKvlaaVhqr/YBfhuCEafLHeLp71WMnA8AJGoema4uDRW460bW+8gT6vo1YGaKPBvWwqWtXwO4JCPUszDqrR2Zx2iZLluRss5ms2QyCdViaNcPKIK4X3Hpl+dzEPRpTxvxKXpoL27YZPTCrcEFGJ5QiG30KMPGhPxNqy9/OKUcTNqHO6NqjGFKiv8pO2cT4d4wtFCdOi15LyhvrFcfBgOA2TYNhPo8SuXr4CRSPM1ucnggKyjcVY+SEmrHBPZPw8no6qdvJrEmVSB0wF8dBA3EGsLnKMoABiGN0gyRmpoXgCDA7MB8wBwYFKw4DAhoEFExqHE0mlHE1OCO8RDvM9o5LE6BdBBR85PiLzthY1/Dylbmhog/FwNrxXwICB9A="
+    },
+    "certificates_BackendAPICert_password": {
+      "type": "securestring",
+      "defaultValue": "SecurePassword100!"
+    },
+
+    "backend_WeatherAPI": {
+      "type": "string",
+      "defaultValue": "https://emea-backendapi.azurewebsites.net"
+    },
+
+    "backend_WeatherAPI_Cert": {
+      "type": "string",
+      "defaultValue": "https://emeabackendapicert.azurewebsites.net"
+    },
+
+    "backend_CustomAuthorizationAPI": {
+      "type": "string",
+      "defaultValue": "https://emea-authfunction20200211103917.azurewebsites.net/api"
+    }
+
+  },
+  "variables": {
+    "v_apim_name": "[concat(resourceGroup().name,'-',uniqueString(subscription().subscriptionId))]",
+    "v_apim_base": "[concat('https://',resourceGroup().name,'-',uniqueString(subscription().subscriptionId),'.azure-api.net')]"
+  },
+
+  "resources": [
+
+    {
+      "type": "Microsoft.ApiManagement/service",
+      "apiVersion": "2019-01-01",
+      "name": "[variables('v_apim_name')]",
+      "location": "[resourceGroup().location]",
+
+      "sku": {
+        "name": "Consumption",
+        "capacity": 0
+      },
+      "properties": {
+        "publisherEmail": "some@mydomain.com",
+        "publisherName": "APIM Consumption Demo",
+        "notificationSenderEmail": "apimgmt-noreply@mail.windowsazure.com",
+        "hostnameConfigurations": [
+          {
+            "type": "Proxy",
+            "hostName": "[concat(variables('v_apim_name'), '.azure-api.net')]",
+            "negotiateClientCertificate": false,
+            "defaultSslBinding": true
+          }
+        ],
+        "customProperties": {
+          "Microsoft.WindowsAzure.ApiManagement.Gateway.Security.Protocols.Tls10": "False",
+          "Microsoft.WindowsAzure.ApiManagement.Gateway.Security.Protocols.Tls11": "False",
+          "Microsoft.WindowsAzure.ApiManagement.Gateway.Security.Backend.Protocols.Tls10": "False",
+          "Microsoft.WindowsAzure.ApiManagement.Gateway.Security.Backend.Protocols.Tls11": "False",
+          "Microsoft.WindowsAzure.ApiManagement.Gateway.Security.Backend.Protocols.Ssl30": "False",
+          "Microsoft.WindowsAzure.ApiManagement.Gateway.Protocols.Server.Http2": "False"
+        },
+        "virtualNetworkType": "None"
+      }
+    },
+    {
+      "type": "Microsoft.ApiManagement/service/apis",
+      "apiVersion": "2019-01-01",
+      "name": "[concat(variables('v_apim_name'), '/backendapi')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service', variables('v_apim_name'))]"
+      ],
+      "properties": {
+        "displayName": "BackendAPI",
+        "apiRevision": "1",
+        "subscriptionRequired": false,
+        "path": "backend",
+        "protocols": [
+          "https"
+        ],
+        "isCurrent": true
+      }
+    },
+    {
+      "type": "Microsoft.ApiManagement/service/apis",
+      "apiVersion": "2019-01-01",
+      "name": "[concat(variables('v_apim_name'), '/backendapi-cert')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service', variables('v_apim_name'))]"
+      ],
+      "properties": {
+        "displayName": "BackendAPI Cert",
+        "apiRevision": "1",
+        "subscriptionRequired": false,
+        "path": "backend-cert",
+        "protocols": [
+          "https"
+        ],
+        "isCurrent": true
+      }
+    },
+    {
+      "type": "Microsoft.ApiManagement/service/apis",
+      "apiVersion": "2019-01-01",
+      "name": "[concat(variables('v_apim_name'), '/custom-authorization')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service', variables('v_apim_name'))]"
+      ],
+      "properties": {
+        "displayName": "Custom-Authorization",
+        "apiRevision": "1",
+        "path": "custom-authorization",
+        "protocols": [
+          "https"
+        ],
+        "isCurrent": true
+      }
+    },
+    {
+      "type": "Microsoft.ApiManagement/service/certificates",
+      "apiVersion": "2019-01-01",
+      "name": "[concat(variables('v_apim_name'), '/BackendAPICert')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service', variables('v_apim_name'))]"
+      ],
+      "properties": {
+        "data": "[parameters('certificates_BackendAPICert_data')]",
+        "password": "[parameters('certificates_BackendAPICert_password')]"
+      }
+    },
+    {
+      "type": "Microsoft.ApiManagement/service/policies",
+      "apiVersion": "2019-01-01",
+      "name": "[concat(variables('v_apim_name'), '/policy')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service', variables('v_apim_name'))]"
+      ],
+      "properties": {
+        "value": "<!--\r\n    IMPORTANT:\r\n    - Policy elements can appear only within the <inbound>, <outbound>, <backend> section elements.\r\n    - Only the <forward-request> policy element can appear within the <backend> section element.\r\n    - To apply a policy to the incoming request (before it is forwarded to the backend service), place a corresponding policy element within the <inbound> section element.\r\n    - To apply a policy to the outgoing response (before it is sent back to the caller), place a corresponding policy element within the <outbound> section element.\r\n    - To add a policy position the cursor at the desired insertion point and click on the round button associated with the policy.\r\n    - To remove a policy, delete the corresponding policy statement from the policy document.\r\n    - Policies are applied in the order of their appearance, from the top down.\r\n-->\r\n<policies>\r\n  <inbound></inbound>\r\n  <backend>\r\n    <forward-request />\r\n  </backend>\r\n  <outbound></outbound>\r\n</policies>",
+        "format": "xml"
+      }
+    },
+    {
+      "type": "Microsoft.ApiManagement/service/properties",
+      "apiVersion": "2019-01-01",
+      "name": "[concat(variables('v_apim_name'), '/backend-weatherapi')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service', variables('v_apim_name'))]"
+      ],
+      "properties": {
+        "displayName": "backend-WeatherAPI",
+        "value": "[parameters('backend_WeatherAPI')]",
+        "secret": false
+      }
+    },
+    {
+      "type": "Microsoft.ApiManagement/service/properties",
+      "apiVersion": "2019-01-01",
+      "name": "[concat(variables('v_apim_name'), '/backend-weatherapi-cert')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service', variables('v_apim_name'))]"
+      ],
+      "properties": {
+        "displayName": "backend-WeatherAPI-Cert",
+        "value": "[parameters('backend_WeatherAPI_Cert')]",
+        "secret": false
+      }
+    },
+    {
+      "type": "Microsoft.ApiManagement/service/properties",
+      "apiVersion": "2019-01-01",
+      "name": "[concat(variables('v_apim_name'), '/backend-weatherapi-cert-thumbprint')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service', variables('v_apim_name'))]",
+        "[resourceId('Microsoft.ApiManagement/service/certificates',variables('v_apim_name'),'BackendAPICert')]"
+      ],
+      "properties": {
+        "displayName": "backend-WeatherAPI-Cert-Thumbprint",
+        "value": "[reference(resourceId('Microsoft.ApiManagement/service/certificates',variables('v_apim_name'),'BackendAPICert')).thumbprint]",
+        "secret": true
+      }
+    },
+    {
+      "type": "Microsoft.ApiManagement/service/properties",
+      "apiVersion": "2019-01-01",
+      "name": "[concat(variables('v_apim_name'), '/backend-customauthorizationapi')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service', variables('v_apim_name'))]"
+      ],
+      "properties": {
+        "displayName": "backend-CustomAuthorizationAPI",
+        "value": "[parameters('backend_CustomAuthorizationAPI')]",
+        "secret": false
+      }
+    },
+    {
+      "type": "Microsoft.ApiManagement/service/properties",
+      "apiVersion": "2019-01-01",
+      "name": "[concat(variables('v_apim_name'), '/apim-customauthorizationapi')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service', variables('v_apim_name'))]"
+      ],
+      "properties": {
+        "displayName": "apim-CustomAuthorizationAPI",
+        "value": "[concat(variables('v_apim_base'),'/custom-authorization/AuthoriseMe')]",
+        "secret": false
+      }
+    },
+
+    {
+      "type": "Microsoft.ApiManagement/service/apis/operations",
+      "apiVersion": "2019-01-01",
+      "name": "[concat(variables('v_apim_name'), '/backendapi-cert/5e4536b0087dcea0c7ad65fc')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis', variables('v_apim_name'), 'backendapi-cert')]",
+        "[resourceId('Microsoft.ApiManagement/service', variables('v_apim_name'))]"
+      ],
+      "properties": {
+        "displayName": "WeatherForecast",
+        "method": "GET",
+        "urlTemplate": "/WeatherForecast",
+        "templateParameters": [],
+        "description": "GET WeatherForecast",
+        "responses": [
+          {
+            "statusCode": 200,
+            "description": "null",
+            "representations": [],
+            "headers": []
+          }
+        ]
+      }
+    },
+    {
+      "type": "Microsoft.ApiManagement/service/apis/operations",
+      "apiVersion": "2019-01-01",
+      "name": "[concat(variables('v_apim_name'), '/backendapi-cert/5e4539ddacf8b56c49898178')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis', variables('v_apim_name'), 'backendapi-cert')]",
+        "[resourceId('Microsoft.ApiManagement/service', variables('v_apim_name'))]"
+      ],
+      "properties": {
+        "displayName": "WeatherForecast (Client-Cert-Required)",
+        "method": "POST",
+        "urlTemplate": "/WeatherForecast",
+        "templateParameters": [],
+        "description": "GET Cert WeatherForecast ",
+        "responses": [
+          {
+            "statusCode": 200,
+            "description": "null",
+            "representations": [],
+            "headers": []
+          }
+        ]
+      }
+    },
+    {
+      "type": "Microsoft.ApiManagement/service/apis/operations",
+      "apiVersion": "2019-01-01",
+      "name": "[concat(variables('v_apim_name'), '/custom-authorization/get-authoriseme')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis', variables('v_apim_name'), 'custom-authorization')]",
+        "[resourceId('Microsoft.ApiManagement/service', variables('v_apim_name'))]"
+      ],
+      "properties": {
+        "displayName": "AuthoriseMe",
+        "method": "GET",
+        "urlTemplate": "/AuthoriseMe",
+        "templateParameters": [],
+        "description": "AuthoriseMe",
+        "responses": [
+          {
+            "statusCode": 200,
+            "representations": [],
+            "headers": []
+          }
+        ]
+      }
+    },
+    {
+      "type": "Microsoft.ApiManagement/service/apis/operations",
+      "apiVersion": "2019-01-01",
+      "name": "[concat(variables('v_apim_name'), '/backendapi/get-weatherforecast')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis', variables('v_apim_name'), 'backendapi')]",
+        "[resourceId('Microsoft.ApiManagement/service', variables('v_apim_name'))]"
+      ],
+      "properties": {
+        "displayName": "WeatherForecast",
+        "method": "GET",
+        "urlTemplate": "/WeatherForecast",
+        "templateParameters": [],
+        "description": "GET WeatherForecast",
+        "responses": []
+      }
+    },
+    {
+      "type": "Microsoft.ApiManagement/service/apis/operations",
+      "apiVersion": "2019-01-01",
+      "name": "[concat(variables('v_apim_name'), '/custom-authorization/post-authoriseme')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis', variables('v_apim_name'), 'custom-authorization')]",
+        "[resourceId('Microsoft.ApiManagement/service', variables('v_apim_name'))]"
+      ],
+      "properties": {
+        "displayName": "AuthoriseMe",
+        "method": "POST",
+        "urlTemplate": "/AuthoriseMe",
+        "templateParameters": [],
+        "description": "AuthoriseMe",
+        "responses": [
+          {
+            "statusCode": 200,
+            "representations": [],
+            "headers": []
+          }
+        ]
+      }
+    },
+    {
+      "type": "Microsoft.ApiManagement/service/apis/policies",
+      "apiVersion": "2019-01-01",
+      "name": "[concat(variables('v_apim_name'), '/backendapi/policy')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis', variables('v_apim_name'), 'backendapi')]",
+        "[resourceId('Microsoft.ApiManagement/service', variables('v_apim_name'))]"
+      ],
+      "properties": {
+        "value": "<policies>\r\n  <inbound>\r\n    <base />\r\n    <!-- 0. [Set Backend API] Set using Named Value -->\r\n    <set-backend-service base-url=\"{{backend-WeatherAPI}}\" />\r\n    <!-- 1. [optional checks] Ensure presence of Authorization header -->\r\n    <choose>\r\n      <when condition=\"@(!context.Request.Headers.ContainsKey(&quot;Authorization&quot;) &amp;&amp; !context.Request.Headers.ContainsKey(&quot;CustomHeader&quot;))\">\r\n        <return-response>\r\n          <set-status code=\"401\" reason=\"Unauthorized\" />\r\n          <set-header name=\"WWW-Authenticate\" exists-action=\"append\">\r\n            <value>@(\"Bearer realm=\"+context.Request.OriginalUrl.Host)</value>\r\n          </set-header>\r\n        </return-response>\r\n      </when>\r\n    </choose>\r\n    <!-- Authorise Request-->\r\n    <send-request mode=\"copy\" response-variable-name=\"authresponse\" timeout=\"60\" ignore-error=\"false\">\r\n      <set-url>{{apim-CustomAuthorizationAPI}}</set-url>\r\n      <set-method>GET</set-method>\r\n      <set-body>none</set-body>\r\n    </send-request>\r\n    <!-- Example of extracting Header from Response-->\r\n    <set-variable name=\"rtoken\" value=\"@(((IResponse)context.Variables[&quot;authresponse&quot;]).Headers.GetValueOrDefault(&quot;Active&quot;,&quot;scheme param&quot;).Split(' ').Last())\" />\r\n    <!-- Example of extracting Value from Body (Json) from Response-->\r\n    <set-variable name=\"rbody\" value=\"@(((IResponse)context.Variables[&quot;authresponse&quot;]).Body.As&lt;JObject&gt;()[&quot;active&quot;])\" />\r\n    <!-- Deleting Header so nothing is passed to backend call -->\r\n    <set-header name=\"Authorization\" exists-action=\"delete\" />\r\n    <!-- Injecting Header so it will be used for backend call -->\r\n    <set-header name=\"customHeader\" exists-action=\"override\">\r\n      <value>@($\"token={(string)context.Variables[\"rtoken\"]}\")</value>\r\n    </set-header>\r\n  </inbound>\r\n  <backend>\r\n    <base />\r\n  </backend>\r\n  <outbound>\r\n    <base />\r\n  </outbound>\r\n  <on-error>\r\n    <base />\r\n  </on-error>\r\n</policies>",
+        "format": "xml"
+      }
+    },
+    {
+      "type": "Microsoft.ApiManagement/service/apis/policies",
+      "apiVersion": "2019-01-01",
+      "name": "[concat(variables('v_apim_name'), '/backendapi-cert/policy')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis', variables('v_apim_name'), 'backendapi-cert')]",
+        "[resourceId('Microsoft.ApiManagement/service', variables('v_apim_name'))]",
+        "[resourceId('Microsoft.ApiManagement/service/certificates',variables('v_apim_name'),'BackendAPICert')]",
+        "[resourceId('Microsoft.ApiManagement/service/properties',variables('v_apim_name'),'backend-weatherapi-cert-thumbprint')]"
+      ],
+      "properties": {
+        "value": "<policies>\r\n  <inbound>\r\n    <base />\r\n    <!-- 0. [Set Backend API] Set using Named Value -->\r\n    <set-backend-service base-url=\"{{backend-WeatherAPI-Cert}}\" />\r\n    <!-- 1. [optional checks] Ensure presence of Authorization header -->\r\n    <choose>\r\n      <when condition=\"@(!context.Request.Headers.ContainsKey(&quot;Authorization&quot;) &amp;&amp; !context.Request.Headers.ContainsKey(&quot;CustomHeader&quot;))\">\r\n        <return-response>\r\n          <set-status code=\"401\" reason=\"Unauthorized\" />\r\n          <set-header name=\"WWW-Authenticate\" exists-action=\"append\">\r\n            <value>@(\"Bearer realm=\"+context.Request.OriginalUrl.Host)</value>\r\n          </set-header>\r\n        </return-response>\r\n      </when>\r\n    </choose>\r\n    <!-- Authorise Request-->\r\n    <send-request mode=\"copy\" response-variable-name=\"authresponse\" timeout=\"60\" ignore-error=\"false\">\r\n      <set-url>{{apim-CustomAuthorizationAPI}}</set-url>\r\n      <set-method>GET</set-method>\r\n      <set-body>none</set-body>\r\n    </send-request>\r\n    <!-- Example of extracting Header from Response-->\r\n    <set-variable name=\"rtoken\" value=\"@(((IResponse)context.Variables[&quot;authresponse&quot;]).Headers.GetValueOrDefault(&quot;Active&quot;,&quot;scheme param&quot;).Split(' ').Last())\" />\r\n    <!-- Example of extracting Value from Body (Json) from Response-->\r\n    <set-variable name=\"rbody\" value=\"@(((IResponse)context.Variables[&quot;authresponse&quot;]).Body.As&lt;JObject&gt;()[&quot;active&quot;])\" />\r\n    <!-- Deleting Header so nothing is passed to backend call -->\r\n    <set-header name=\"Authorization\" exists-action=\"delete\" />\r\n    <!-- Injecting Header so it will be used for backend call -->\r\n    <set-header name=\"customHeader\" exists-action=\"override\">\r\n      <value>@($\"token={(string)context.Variables[\"rtoken\"]}\")</value>\r\n    </set-header>\r\n    <!-- Setting Backend Cert -->\r\n   <authentication-certificate thumbprint=\"{{backend-WeatherAPI-Cert-Thumbprint}}\" />\r\n  </inbound>\r\n  <backend>\r\n    <base />\r\n  </backend>\r\n  <outbound>\r\n    <base />\r\n  </outbound>\r\n  <on-error>\r\n    <base />\r\n  </on-error>\r\n</policies>",
+        "format": "xml"
+      }
+    },
+    {
+      "type": "Microsoft.ApiManagement/service/apis/policies",
+      "apiVersion": "2019-01-01",
+      "name": "[concat(variables('v_apim_name'), '/custom-authorization/policy')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis', variables('v_apim_name'), 'custom-authorization')]",
+        "[resourceId('Microsoft.ApiManagement/service', variables('v_apim_name'))]"
+      ],
+      "properties": {
+        "value": "<!--\r\n    IMPORTANT:\r\n    - Policy elements can appear only within the <inbound>, <outbound>, <backend> section elements.\r\n    - To apply a policy to the incoming request (before it is forwarded to the backend service), place a corresponding policy element within the <inbound> section element.\r\n    - To apply a policy to the outgoing response (before it is sent back to the caller), place a corresponding policy element within the <outbound> section element.\r\n    - To add a policy, place the cursor at the desired insertion point and select a policy from the sidebar.\r\n    - To remove a policy, delete the corresponding policy statement from the policy document.\r\n    - Position the <base> element within a section element to inherit all policies from the corresponding section element in the enclosing scope.\r\n    - Remove the <base> element to prevent inheriting policies from the corresponding section element in the enclosing scope.\r\n    - Policies are applied in the order of their appearance, from the top down.\r\n    - Comments within policy elements are not supported and may disappear. Place your comments between policy elements or at a higher level scope.\r\n-->\r\n<policies>\r\n  <inbound>\r\n    <base />\r\n    <set-backend-service base-url=\"{{backend-CustomAuthorizationAPI}}\" />\r\n  </inbound>\r\n  <backend>\r\n    <base />\r\n  </backend>\r\n  <outbound>\r\n    <base />\r\n  </outbound>\r\n  <on-error>\r\n    <base />\r\n  </on-error>\r\n</policies>",
+        "format": "xml"
+      }
+    },
+    {
+      "type": "Microsoft.ApiManagement/service/apis/schemas",
+      "apiVersion": "2019-01-01",
+      "name": "[concat(variables('v_apim_name'), '/custom-authorization/5e4bbe9d4e14de1d5aa4133d')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis', variables('v_apim_name'), 'custom-authorization')]",
+        "[resourceId('Microsoft.ApiManagement/service', variables('v_apim_name'))]"
+      ],
+      "properties": {
+        "contentType": "application/vnd.ms-azure-apim.swagger.definitions+json",
+        "document": {}
+      }
+    },
+    {
+      "type": "Microsoft.ApiManagement/service/apis/operations/policies",
+      "apiVersion": "2019-01-01",
+      "name": "[concat(variables('v_apim_name'), '/custom-authorization/get-authoriseme/policy')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations', variables('v_apim_name'), 'custom-authorization', 'get-authoriseme')]",
+        "[resourceId('Microsoft.ApiManagement/service/apis', variables('v_apim_name'), 'custom-authorization')]",
+        "[resourceId('Microsoft.ApiManagement/service', variables('v_apim_name'))]"
+      ],
+      "properties": {
+        "value": "<policies>\r\n  <inbound>\r\n    <base />\r\n  </inbound>\r\n  <backend>\r\n    <base />\r\n  </backend>\r\n  <outbound>\r\n    <base />\r\n  </outbound>\r\n  <on-error>\r\n    <base />\r\n  </on-error>\r\n</policies>",
+        "format": "xml"
+      }
+    }
+  ]
+}
