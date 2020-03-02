@@ -3,7 +3,7 @@ A short POC to demo APIM Consumption with policies to make a call to the custom 
 
 [![Watch the video](https://img.youtube.com/vi/iDibUURuOMg/maxresdefault.jpg)](https://www.youtube.com/watch?v=iDibUURuOMg)
 
-Here is part 2 video that shows how to apply policies at base level of all APIs.
+Here is a short video that shows how to apply policies at the base level of all APIs.
 [![Watch the video](https://img.youtube.com/vi/8oqZn8sSn5Y/maxresdefault.jpg)](https://www.youtube.com/watch?v=8oqZn8sSn5Y)
 
 
